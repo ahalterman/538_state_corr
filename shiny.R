@@ -89,7 +89,12 @@ server <- function(input, output, session) {
       geom_statebins(text_color = "white",
                      font_size = 3,
                      legend_title="Percent Trump") +
-      scale_fill_continuous(low = "blue", high="red", na.value = "black") +
+      scale_fill_gradient2(low = "blue", high="red", 
+        #low = "red"),
+        mid = "white",
+        #high = muted("blue"),
+                           na.value = "black",
+                            midpoint = 0) +
       theme_statebins(legend_position="right") +
       labs(title = "Change in predicted probability of a Trump victory",
            subtitle = "Assuming a Trump victory in the black shaded state",
